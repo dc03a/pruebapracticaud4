@@ -50,10 +50,7 @@ public class BookingServiceTest {
 
     @BeforeEach
     public void setup() {
-
         MockitoAnnotations.initMocks(this);
-
-
     }
 
     /**
@@ -64,7 +61,17 @@ public class BookingServiceTest {
      */
     @Test
     void getAvailablePlaceCountTest() {
+        Room room1 = new Room("1", 10);
+        Room room2 = new Room("2", 10);
+        Room room3 = new Room("3", 10);
+        List<Room> rooms = new ArrayList<>();
 
+        BookingService bookingServiceSpy = Mockito.spy(bookingService);
+        rooms.add(room1);
+        rooms.add(room2);
+        rooms.add(room3);
+
+        Mockito.when(roomService.getAvailableRooms());
     }
 
     /**
